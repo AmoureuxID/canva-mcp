@@ -6,22 +6,20 @@ import { dirname, resolve } from 'node:path';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 
-test('repository overview links to a real banner and complete guide', async () => {
+test('README contains the complete single-file setup guide', async () => {
   const readme = await readFile(resolve(root, 'README.md'), 'utf8');
-  const guide = await readFile(resolve(root, 'GUIDE.md'), 'utf8');
   assert.ok((await stat(resolve(root, 'assets/canva-mcp-oauth-banner.svg'))).isFile());
   assert.match(readme, /src="assets\/canva-mcp-oauth-banner\.svg"[^>]*alt="[^"]+"/);
-  for (const anchor of ['configure-a-stdio-mcp-client', 'give-the-setup-task-to-an-ai-agent', 'troubleshooting', 'permissions-and-credential-storage', 'local-checks-and-npm-release']) {
-    assert.ok(readme.includes(`GUIDE.md#${anchor}`));
-  }
-  assert.match(guide, /Both reading and writing must be confirmed by real tool results/);
+  for (const heading of [
+    'Requirements', 'Install and sign in', 'Configure a stdio MCP client',
+    'Commands', 'Permissions and credential storage', 'Give the setup task to an AI agent',
+    'Troubleshooting', 'Local checks and npm release'
+  ]) assert.ok(readme.includes(`## ${heading}`), `Missing README section: ${heading}`);
+  assert.match(readme, /Both reading and writing must be confirmed by real tool results/);
   assert.match(readme, /read and edited text on an isolated test copy/i);
-  assert.doesNotMatch(readme + guide, /grant is read-only|read-only scopes|read-only OAuth|do not request\s+write scopes or modify designs/i);
   assert.match(readme, /https:\/\/www\.npmjs\.com\/package\/canva-mcp/);
-  assert.doesNotMatch(readme, /publication pending|not published/i);
-  assert.doesNotMatch(guide, /publication is pending|before publication|after .* appears on npmjs\.com/i);
   assert.match(readme, /npm install --global canva-mcp\s+canva-mcp login\s+canva-mcp status/);
-  assert.match(guide, /npm install --global canva-mcp\s+canva-mcp login\s+canva-mcp status/);
-  assert.match(guide, /npm install --global \./);
-  assert.doesNotMatch(readme, /canva-mcp-oauth@0\.1\.0/);
+  assert.match(readme, /npm install --global \./);
+  assert.doesNotMatch(readme, /GUIDE\.md|publication pending|not published|grant is read-only|read-only scopes|read-only OAuth/i);
+  await assert.rejects(stat(resolve(root, 'GUIDE.md')), { code: 'ENOENT' });
 });

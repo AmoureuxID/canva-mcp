@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "repository": { "type": "git", "url": "https://github.com/AmoureuxID/canva-mcp.git" },
   "publishConfig": { "access": "public", "registry": "https://registry.npmjs.org/" },
-  "files": ["bin/", "src/", "assets/", "README.md", "GUIDE.md", "LICENSE"],
+  "files": ["bin/", "src/", "assets/", "README.md", "LICENSE"],
   "license": "MIT",
   "description": "Local OAuth bridge for Canva MCP stdio clients",
   "type": "module",
