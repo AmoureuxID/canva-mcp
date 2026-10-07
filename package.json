@@ -1,0 +1,14 @@
+{
+  "name": "canva-mcp",
+  "version": "0.1.0",
+  "repository": { "type": "git", "url": "https://github.com/AmoureuxID/canva-mcp.git" },
+  "publishConfig": { "access": "public", "registry": "https://registry.npmjs.org/" },
+  "files": ["bin/", "src/", "assets/", "README.md", "GUIDE.md", "LICENSE"],
+  "license": "MIT",
+  "description": "Local OAuth bridge for Canva MCP stdio clients",
+  "type": "module",
+  "engines": { "node": ">=20.11" },
+  "bin": { "canva-mcp": "./bin/canva-mcp-stdio.mjs" },
+  "scripts": { "test": "node --test" },
+  "dependencies": { "@modelcontextprotocol/sdk": "1.32.1" }
+}

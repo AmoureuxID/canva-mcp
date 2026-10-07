@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title description">
+  <title id="title">Canva MCP OAuth</title>
+  <desc id="description">A local bridge connects an MCP client to Canva MCP. The person approves read access in their own browser.</desc>
+  <rect width="1200" height="360" fill="#192C30"/>
+  <path d="M48 38H1152M48 322H1152" fill="none" stroke="#496268" stroke-width="1"/>
+  <text x="48" y="81" fill="#8ED1C3" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" letter-spacing="2">LOCAL CONNECTION / USER-APPROVED ACCESS</text>
+  <text x="48" y="164" fill="#F7F4ED" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="700">Canva MCP OAuth</text>
+  <text x="48" y="204" fill="#E9EFEA" font-family="Arial, Helvetica, sans-serif" font-size="20">One local bridge. Your account. Your approval.</text>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" text-anchor="middle">
+    <rect x="48" y="246" width="202" height="50" rx="3" fill="none" stroke="#8ED1C3" stroke-width="2"/>
+    <text x="149" y="278" fill="#F7F4ED">MCP client</text>
+    <path d="M262 271H313M306 264L313 271L306 278" fill="none" stroke="#8ED1C3" stroke-width="2"/>
+    <rect x="326" y="246" width="257" height="50" rx="3" fill="#8ED1C3"/>
+    <text x="454" y="278" fill="#192C30">Local OAuth bridge</text>
+    <path d="M595 271H646M639 264L646 271L639 278" fill="none" stroke="#8ED1C3" stroke-width="2"/>
+    <rect x="659" y="246" width="202" height="50" rx="3" fill="none" stroke="#8ED1C3" stroke-width="2"/>
+    <text x="760" y="278" fill="#F7F4ED">Canva MCP</text>
+  </g>
+  <text x="1152" y="277" fill="#E9EFEA" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="end">stdio · PKCE S256</text>
+</svg>
